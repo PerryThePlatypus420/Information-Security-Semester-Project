@@ -53,7 +53,7 @@ def encrypt(plaintext, key):
             half_length = len(substring) // 2
             left_half = substring[:half_length]
             right_half = substring[half_length:]
-            key_length = len(key)//2
+            key_length = len(key)
             shifted_left_half = left_round_shift(left_half, key_length)
             shifted_right_half = right_round_shift(right_half, key_length)
             transposed_ciphertext = shifted_left_half + shifted_right_half
@@ -86,7 +86,7 @@ def decrypt(ciphertext, key):
             half_length = len(decrypted_substring) // 2
             left_half = decrypted_substring[:half_length]
             right_half = decrypted_substring[half_length:]
-            key_length = len(key)//2
+            key_length = len(key)
             shifted_left_half = right_round_shift(left_half, key_length)
             shifted_right_half = left_round_shift(right_half, key_length)
             plaintext += shifted_left_half + shifted_right_half
